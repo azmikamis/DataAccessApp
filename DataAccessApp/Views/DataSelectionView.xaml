@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="DataAccessApp.Views.DataSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:DataAccessApp.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vm:DataSelectionViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <ListView Height="Auto" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Width="Auto" ItemsSource="{Binding DataItems}" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ProductID" DisplayMemberBinding="{Binding Path=Col1}" Width="80" />
+                    <GridViewColumn Header="ModelNumber" DisplayMemberBinding="{Binding Path=Col2}" Width="80" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
